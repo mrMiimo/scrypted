@@ -42,7 +42,7 @@ export class HikVisionCameraAPI {
         const response = await this.digestAuth.request({
             method: "GET",
             responseType: 'text',
-            url: `http://${this.ip}/ISAPI/Streaming/channels/101/capabilities`,
+            url: `http://${this.ip}/ISAPI/Streaming/channels/102/capabilities`,
         });
 
         // this is bad:
@@ -61,7 +61,7 @@ export class HikVisionCameraAPI {
         const response = await this.digestAuth.request({
             method: "GET",
             responseType: 'arraybuffer',
-            url: `http://${this.ip}/ISAPI/Streaming/channels/101/picture?snapShotImageType=JPEG`,
+            url: `http://${this.ip}/ISAPI/Streaming/channels/102/picture?snapShotImageType=JPEG`,
         });
 
         return Buffer.from(response.data);
